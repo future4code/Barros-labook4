@@ -1,11 +1,11 @@
 
-### Create a new Client
+### Create a new User
 POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name":"Dany Smith",
-    "email":"dany@gmail.com",
+    "name":"Bianca Smith",
+    "email":"bianca@gmail.com",
     "password": "1234567"
 }
 
@@ -13,7 +13,7 @@ Content-Type: application/json
 GET http://localhost:3003/posts/1675001631299
 Content-Type: application/json
 
-### Return stock
+### Create a new Post
 POST http://localhost:3003/post
 Content-Type: application/json
 
@@ -25,13 +25,26 @@ Content-Type: application/json
     "authorId": "1675001631299"
 }
 
-###
+### Create a new Friendship
 
 POST http://localhost:3003/friendship
 Content-Type: application/json
 
 {
-    "friend":"1675019596015",
+    "friend":"1675081679184",
     "authorId": "1675001631299"
 }
+
+### Delete Friendship
+
+DELETE http://localhost:3003/friendship/1675001631299
+Content-Type: application/json
+
+{
+    "friend":"1675081679184"
+}
+
+### Return all Friend
+GET http://localhost:3003/friendship/1675001631299
+Content-Type: application/json
 

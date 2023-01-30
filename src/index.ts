@@ -4,6 +4,8 @@ import { createUser } from "./endpoints/createUser"
 import { createPost } from "./endpoints/createPost"
 import { getPost } from "./endpoints/getPosts"
 import { createFriendship } from "./endpoints/createFriendship"
+import { getFriendships } from "./endpoints/getFriendships"
+import { deleteFriendships } from "./endpoints/deleteFriendship"
 
 /**************************** CONFIG ******************************/
 
@@ -23,5 +25,9 @@ app.post('/post',createPost);
 
 app.post('/friendship',createFriendship);
 
+app.delete('/friendship/:id',deleteFriendships);
+
 app.get('/posts/:id',getPost);
+
+app.get('/friendship/:id',getFriendships);
 
