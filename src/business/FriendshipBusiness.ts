@@ -95,7 +95,7 @@ export class FriendshipBusiness {
       });
 
       if (existFriendship === -1) {
-        throw new Error("friendship already exists!");
+        throw new Error("friendship does not exist!");
       }
 
       await friendshipDatabase.deletePost(input);

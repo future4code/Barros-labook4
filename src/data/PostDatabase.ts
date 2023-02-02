@@ -22,23 +22,13 @@ export class PostDatabase extends BaseDatabase {
 
   findPost = async (postid: string): Promise<TPost[]> => {
     try {
-      const posts: TPost[] = [];
-      
+            
       const result = await PostDatabase.connection
         .select("*")
         .from(PostDatabase.TABLE_NAME)
         .where({ id: postid });
-
-      posts.push({
-        id: result[0].id,
-        photo: result[0].photo,
-        description: result[0].description,
-        type: result[0].type,
-        createdAt: result[0].created_at,
-        authorId: result[0].author_id,
-      });
-
-      return posts;
+      
+      return result;
     } catch (error: any) {
       throw new Error(error.message);
     }

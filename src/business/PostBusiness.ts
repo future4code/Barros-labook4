@@ -26,6 +26,15 @@ export class PostBusiness {
           'Preencha o campo type com normal ou event'
         );
       }
+
+      const queryUser = await userDatabase.findUser();
+      const existUser = queryUser.findIndex((user)=>{
+        return user.id === authorId
+      })
+      
+      if(existUser === -1){
+        throw new Error("User id does not exist.")
+      } 
       
       const formatDate:any= dateFormat(createdAt.toString())
 

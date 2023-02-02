@@ -22,7 +22,7 @@ Content-Type: application/json
     "description": "foto da viagem",
     "type": "event",
     "createdAt": "02/01/2023",
-    "authorId": "1675081697628"
+    "authorId": "1675081679184"
 }
 
 ### Create a new Friendship
@@ -51,7 +51,7 @@ GET http://localhost:3003/feeds
 Content-Type: application/json
 
 {
-    "type":"event"
+    "type":"normal"
 }
 
 ### Like Post
