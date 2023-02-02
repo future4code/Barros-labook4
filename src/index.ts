@@ -1,11 +1,9 @@
-import express, { Express, Request, Response } from "express"
+import express, { Express } from "express"
 import cors from "cors"
-import { createUser } from "./endpoints/createUser"
-import { createPost } from "./endpoints/createPost"
-import { getPost } from "./endpoints/getPosts"
-import { createFriendship } from "./endpoints/createFriendship"
-import { getFriendships } from "./endpoints/getFriendships"
-import { deleteFriendships } from "./endpoints/deleteFriendship"
+import { UserController } from "./controller/UserController"
+import { PostController } from "./controller/PostController"
+import { FriendshipController } from "./controller/FriendshipController"
+import { LikeController } from "./controller/LikeController"
 
 /**************************** CONFIG ******************************/
 
@@ -19,15 +17,26 @@ app.listen(3003, () => {
 
 
 /**************************** ENDPOINTS ******************************/
-app.post('/users',createUser);
+const userController = new UserController();
+const postController = new PostController();
+const friendshipController = new FriendshipController();
+const likeController = new LikeController();
 
-app.post('/post',createPost);
+app.post('/users',userController.createUser);
 
-app.post('/friendship',createFriendship);
+app.post('/post',postController.createPost);
 
-app.delete('/friendship/:id',deleteFriendships);
+app.post('/friendship',friendshipController.createFriendship);
 
-app.get('/posts/:id',getPost);
+app.post('/like',likeController.createLike);
 
-app.get('/friendship/:id',getFriendships);
+app.delete('/friendship/:id',friendshipController.deleteFriendship);
+
+app.delete('/like/:id',likeController.deleteLike);
+
+app.get('/posts/:id',postController.findPost);
+
+app.get('/feeds/:id',postController.feedPost);
+
+app.get('/feeds',postController.feedPostAll);
 

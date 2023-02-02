@@ -4,13 +4,13 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name":"Bianca Smith",
-    "email":"bianca@gmail.com",
+    "name":"Bianca2 Smith",
+    "email":"bianca2@gmail.com",
     "password": "1234567"
 }
 
-### Return all post
-GET http://localhost:3003/posts/1675001631299
+### Return post
+GET http://localhost:3003/posts/1675017838548
 Content-Type: application/json
 
 ### Create a new Post
@@ -20,31 +20,53 @@ Content-Type: application/json
 {
     "photo" : "Foto",
     "description": "foto da viagem",
-    "type": "normal",
-    "created_at": "" ,
-    "authorId": "1675001631299"
+    "type": "event",
+    "createdAt": "02/01/2023",
+    "authorId": "1675081697628"
 }
 
 ### Create a new Friendship
-
 POST http://localhost:3003/friendship
 Content-Type: application/json
 
 {
-    "friend":"1675081679184",
+    "friendId":"1675081679184",
     "authorId": "1675001631299"
 }
 
 ### Delete Friendship
-
 DELETE http://localhost:3003/friendship/1675001631299
 Content-Type: application/json
 
 {
-    "friend":"1675081679184"
+    "friendId":"1675081679184"
 }
 
-### Return all Friend
-GET http://localhost:3003/friendship/1675001631299
+### Return Feeds friends
+GET http://localhost:3003/feeds/1675001631299
 Content-Type: application/json
 
+### return feed by type 
+GET http://localhost:3003/feeds
+Content-Type: application/json
+
+{
+    "type":"event"
+}
+
+### Like Post
+POST http://localhost:3003/like
+Content-Type: application/json
+
+{
+    "postId":"1675089703154",
+    "authorId": "1675001631299"
+}
+
+### Delete Like Post
+DELETE  http://localhost:3003/like/1675001631299
+Content-Type: application/json
+
+{
+    "postId":"1675089703154"
+}
