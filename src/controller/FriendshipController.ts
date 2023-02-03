@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { FriendshipBusiness } from "../business/FriendshipBusiness";
-import { FriendInputDTO } from "../model/friends";
+import { FriendInputDTO } from "../model/Friends";
 import { DeleteFriendshipInputDTO } from "../model/Friendship";
 const friendshipBusiness = new FriendshipBusiness();
 export class FriendshipController {
@@ -30,6 +30,7 @@ export class FriendshipController {
 
         await friendshipBusiness.deleteFriendship(input)
         res.status(201).send({ message: "deleted from friendship!" });
+        
       } catch (error:any) {
         res.status(400).send(error.message);
       }
