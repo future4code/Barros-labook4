@@ -10,7 +10,7 @@ Projeto desenvolvido como didática de back-end para as turmas JBL LABENU com co
 [Doc_Postman](https://documenter.getpostman.com/view/22363157/2s8Z75S9p9)
 
 ## Link Deploy Render
-https://labsystem6.onrender.com
+https://labook4.onrender.com
 
 ##  👩🏾Pessoas Desenvolvedoras do Projeto
 
