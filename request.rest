@@ -1,32 +1,36 @@
 
 ### Create a new User
-POST http://localhost:3003/users
+POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name":"Bianca2 Smith",
-    "email":"bianca2@gmail.com",
+    "name":"Bianca5 Smith",
+    "email":"bianca5@gmail.com",
     "password": "1234567"
 }
 
 ### Return post
-GET http://localhost:3003/posts/1675017838548
+GET http://localhost:3003/post/getpost
 Content-Type: application/json
 
+{
+    "id":"1675379034720"
+}
+
 ### Create a new Post
-POST http://localhost:3003/post
+POST http://localhost:3003/post/create
 Content-Type: application/json
 
 {
     "photo" : "Foto",
     "description": "foto da viagem",
-    "type": "event",
+    "type": "normal",
     "createdAt": "02/01/2023",
     "authorId": "1675081679184"
 }
 
 ### Create a new Friendship
-POST http://localhost:3003/friendship
+POST http://localhost:3003/friendship/create
 Content-Type: application/json
 
 {
@@ -43,11 +47,11 @@ Content-Type: application/json
 }
 
 ### Return Feeds friends
-GET http://localhost:3003/feeds/1675001631299
+GET http://localhost:3003/post/getfeeds/1675001631299
 Content-Type: application/json
 
 ### return feed by type 
-GET http://localhost:3003/feeds
+GET http://localhost:3003/post/getfeeds
 Content-Type: application/json
 
 {
@@ -55,11 +59,11 @@ Content-Type: application/json
 }
 
 ### Like Post
-POST http://localhost:3003/like
+POST http://localhost:3003/like/create
 Content-Type: application/json
 
 {
-    "postId":"1675089703154",
+    "postId":"1675379034720",
     "authorId": "1675001631299"
 }
 
@@ -68,7 +72,7 @@ DELETE  http://localhost:3003/like/1675001631299
 Content-Type: application/json
 
 {
-    "postId":"1675089703154"
+    "postId":"1675379034720"
 }
 
 ### Comment Post

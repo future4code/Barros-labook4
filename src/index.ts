@@ -1,46 +1,17 @@
-import express, { Express } from "express"
-import cors from "cors"
-import { UserController } from "./controller/UserController"
-import { PostController } from "./controller/PostController"
-import { FriendshipController } from "./controller/FriendshipController"
-import { LikeController } from "./controller/LikeController"
-import { CommentController } from "./controller/CommentsController"
+import app from "./controller/app"
+import { userRouter } from "./controller/router/userRouter"
+import { postRouter } from "./controller/router/postRouter"
+import { friendshipRouter } from "./controller/router/FriendshipRouter"
+import { likeRouter } from "./controller/router/likeRouter"
+import { commentsRouter } from "./controller/router/commentsRouter"
 
-/**************************** CONFIG ******************************/
-
-const app: Express = express()
-app.use(express.json())
-app.use(cors())
-
-app.listen(3003, () => {
-   console.log("Server running on port 3003")
-})
 
 
 /**************************** ENDPOINTS ******************************/
-const userController = new UserController();
-const postController = new PostController();
-const friendshipController = new FriendshipController();
-const likeController = new LikeController();
-const commentController = new CommentController();
+app.use('/user', userRouter)
+app.use('/post', postRouter);
+app.use('/friendship', friendshipRouter);
+app.use('/like', likeRouter);
+app.use('/comments', commentsRouter);
 
-app.post('/users',userController.createUser);
-
-app.post('/post',postController.createPost);
-
-app.post('/friendship',friendshipController.createFriendship);
-
-app.post('/like',likeController.createLike);
-
-app.post('/comments', commentController.createComment);
-
-app.delete('/friendship/:id',friendshipController.deleteFriendship);
-
-app.delete('/like/:id',likeController.deleteLike);
-
-app.get('/posts/:id',postController.findPost);
-
-app.get('/feeds/:id',postController.feedPost);
-
-app.get('/feeds',postController.feedPostAll);
 

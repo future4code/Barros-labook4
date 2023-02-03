@@ -26,7 +26,7 @@ export class PostController {
   findPost = async (req: Request, res: Response): Promise<void> => {
     try {
       const input: PostIdDTO = {
-        id: req.params.id
+        id: req.body.id
       };
       
       const posts = await postBusiness.findPost(input)
