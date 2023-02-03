@@ -15,4 +15,5 @@ export interface LikeInputControllerDTO{
 }
 export interface DeleteLikeInputDTO{
     id: string,
+    
 }
