@@ -1,6 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
-import { TPost } from "../model/Posts";
-import { LikeInputDataDTO, LikeInputDTO, TLike } from "../model/likes";
+import { LikeInputControllerDTO, LikeInputDataDTO, LikeInputDTO } from "../model/likes";
 
 export class LikeDatabase extends BaseDatabase {
   private static TABLE_NAME = "labook_likes";
@@ -18,7 +17,7 @@ export class LikeDatabase extends BaseDatabase {
     }
   };
 
-  findLike = async (input: LikeInputDataDTO): Promise<LikeInputDTO[]> => {
+  findLike = async (input: LikeInputControllerDTO): Promise<LikeInputDTO[]> => {
     try {
 
       const {postId,authorId}= input;

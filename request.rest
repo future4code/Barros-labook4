@@ -70,3 +70,13 @@ Content-Type: application/json
 {
     "postId":"1675089703154"
 }
+
+### Comment Post
+POST   http://localhost:3003/comments
+Content-Type: application/json
+
+{
+    "comment":"Linda foto",
+    "postId":"1675379034720",
+    "authorId": "1675001631299"
+}

@@ -3,8 +3,7 @@ import { UserDatabase } from "../data/UserDatabase";
 import { FriendInputDTO } from "../model/friends";
 import {
   DeleteFriendshipInputDTO,
-  FriendshipInputDTO,
-  TFriendship,
+  FriendshipInputDTO
 } from "../model/Friendship";
 
 const friendshipDatabase = new FriendshipDatabase();

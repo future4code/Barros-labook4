@@ -1,9 +1,9 @@
 import { BaseDatabase } from "./BaseDatabase";
-import { TUser } from "../model/User";
+import { UserDTO } from "../model/User";
 
 export class UserDatabase extends BaseDatabase {
   private static TABLE_NAME = "labook_users";
-  insertUser = async (user: TUser): Promise<void> => {
+  insertUser = async (user: UserDTO): Promise<void> => {
     try {
       await UserDatabase.connection
         .insert({
@@ -18,9 +18,9 @@ export class UserDatabase extends BaseDatabase {
     }
   };
 
-  findUser = async (): Promise<TUser[]> => {
+  findUser = async (): Promise<UserDTO[]> => {
     try {
-      const users: TUser[] = [];
+      const users: UserDTO[] = [];
 
       const result = await UserDatabase.connection
         .select("*")

@@ -1,7 +1,8 @@
 import { UserDatabase } from "../data/UserDatabase";
+import { InputControllerDTO } from "../model/User";
 
 export class UserBusiness {
-  createUser = async (input: any): Promise<void> => {
+  createUser = async (input: InputControllerDTO): Promise<void> => {
     try {
       const { name, email, password } = input;
 

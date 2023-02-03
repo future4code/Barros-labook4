@@ -1,15 +1,14 @@
 import { LikeDatabase } from "../data/LikeDatabase";
 import { PostDatabase } from "../data/PostDatabase";
 import { UserDatabase } from "../data/UserDatabase";
-import { LikeInputDataDTO, LikeInputDTO, TLike } from "../model/likes";
-import { TPost } from "../model/Posts";
+import { LikeInputControllerDTO, LikeInputDataDTO, LikeInputDTO } from "../model/likes";
 
 const likeDatabase = new LikeDatabase();
 const userDatabase = new UserDatabase();
 const postDatabase = new PostDatabase();
 
 export class LikeBusiness {
-  createLike = async (input: TLike): Promise<void> => {
+  createLike = async (input: LikeInputControllerDTO): Promise<void> => {
     try {
       const { postId, authorId } = input;
 
@@ -60,7 +59,7 @@ export class LikeBusiness {
 
   findLike = () => {};
 
-  deleteLike = async (input: LikeInputDataDTO): Promise<void> => {
+  deleteLike = async (input: LikeInputControllerDTO): Promise<void> => {
     try {
       const { postId, authorId } = input;
             

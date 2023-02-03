@@ -4,6 +4,7 @@ import { UserController } from "./controller/UserController"
 import { PostController } from "./controller/PostController"
 import { FriendshipController } from "./controller/FriendshipController"
 import { LikeController } from "./controller/LikeController"
+import { CommentController } from "./controller/CommentsController"
 
 /**************************** CONFIG ******************************/
 
@@ -21,6 +22,7 @@ const userController = new UserController();
 const postController = new PostController();
 const friendshipController = new FriendshipController();
 const likeController = new LikeController();
+const commentController = new CommentController();
 
 app.post('/users',userController.createUser);
 
@@ -29,6 +31,8 @@ app.post('/post',postController.createPost);
 app.post('/friendship',friendshipController.createFriendship);
 
 app.post('/like',likeController.createLike);
+
+app.post('/comments', commentController.createComment);
 
 app.delete('/friendship/:id',friendshipController.deleteFriendship);
 

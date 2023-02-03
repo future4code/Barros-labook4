@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import { LikeBusiness } from "../business/LikeBusiness";
+import { LikeInputControllerDTO } from "../model/likes";
 
 const likeBusiness = new LikeBusiness();
 export class LikeController {
   createLike = async (req: Request, res: Response): Promise<void> => {
     try {
-      const input: any = {
+      const input: LikeInputControllerDTO = {
         postId: req.body.postId,
         authorId: req.body.authorId
       };
@@ -22,7 +23,7 @@ export class LikeController {
 
   deleteLike = async(req:Request, res:Response):Promise<void> => {
       try {
-        const input: any = {
+        const input: LikeInputControllerDTO = {
           postId: req.body.postId,
           authorId: req.params.id
         };
