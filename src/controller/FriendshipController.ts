@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { FriendshipBusiness } from "../business/FriendshipBusiness";
-import { FriendInputDTO } from "../model/Friends";
+import { FriendInputDTO } from "../model/friends";
 import { DeleteFriendshipInputDTO } from "../model/Friendship";
 const friendshipBusiness = new FriendshipBusiness();
 export class FriendshipController {
