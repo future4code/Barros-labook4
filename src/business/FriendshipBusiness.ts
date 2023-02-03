@@ -1,6 +1,6 @@
 import { FriendshipDatabase } from "../data/FriendshipDatabase";
 import { UserDatabase } from "../data/UserDatabase";
-import { FriendInputDTO } from "../model/Friends";
+import { FriendInputDTO } from "../model/friends";
 import {
   DeleteFriendshipInputDTO,
   FriendshipInputDTO
