@@ -9,7 +9,7 @@ Projeto desenvolvido como didática de back-end para as turmas JBL LABENU com co
 ## Link Deploy Render
 https://labook4.onrender.com
 
-##  👩🏾Pessoas Desenvolvedoras do Projeto
+##  👩🏾Pessoa Desenvolvedora do Projeto
 
  [<img src="https://avatars.githubusercontent.com/u/74737156?v=4" width=115><br><sub>Byron Smith</sub>](https://github.com/byron-smith-nobrega)
 
