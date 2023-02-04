@@ -48,13 +48,13 @@ DB_USER = ""
 DB_PASS = ""
 DB_NAME = ""
 ```
-Após configuração do .env, dê o comando seguinte para rodar o migration:
-```
-npm run migrations
-```
-Após o migration, dê o comando seguinte para rodar a aplicação:
+Após configuração do .env, dê o comando seguinte para rodar a aplicação:
 ```
 npm run start
+```
+Após o start, dê o comando seguinte para criar as tabelas no banco de dados:
+```
+npm run migrations
 ```
 
 Use o Postman ou o Insomnia para realizar as requisições desejadas.
