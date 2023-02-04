@@ -7,7 +7,7 @@ Repositório do projeto Labook
 Projeto desenvolvido como didática de back-end para as turmas JBL LABENU com conteúdos que englobam o universo da criação de uma API com a temática de um sistema de gerenciamento básico da organizaçãode labenu.
 
 ## Link Documentação Postman
-[Doc_Postman](https://documenter.getpostman.com/view/22363157/2s8Z75S9p9)
+[Doc_Postman](https://documenter.getpostman.com/view/22363157/2s935mtRKC)
 
 ## Link Deploy Render
 https://labook4.onrender.com
