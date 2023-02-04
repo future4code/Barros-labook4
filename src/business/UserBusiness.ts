@@ -10,19 +10,19 @@ export class UserBusiness {
 
       if (!name || !email || !password) {
         throw new Error(
-          'Preencha os campos "name", "email" e "password"'
+          'Fill in the fields "name", "email" e "password"'
         );
       }
 
       if (password.length < 6) {
-        throw new Error("Senha muito curta");
+        throw new Error("Password too short minimum 6 characters");
       }
 
       const userBase = await userDatabase.findUser();
       const existUser = userBase.findIndex((user)=>user.email === email)
       
       if(existUser != -1) {
-        throw new Error("Usuário já cadastrado ");
+        throw new Error("User already registered");
       }
       const id: string = Date.now().toString();
 

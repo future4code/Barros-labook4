@@ -8,6 +8,6 @@ const postController = new PostController();
 
 postRouter.post('/create',postController.createPost);
 postRouter.get('/getpost',postController.findPost);
-postRouter.get('/getfeeds/:id',postController.feedPost);
+postRouter.get('/getfeedsfreands',postController.feedPost);
 postRouter.get('/getfeeds',postController.feedPostAll);
 

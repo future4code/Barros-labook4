@@ -14,7 +14,7 @@ export class UserController {
       const userBusiness = new UserBusiness()
       await userBusiness.createUser(input)
 
-      res.status(201).send({ message: "Usuário criado!" });
+      res.status(201).send({ message: "User created!" });
     } catch (error: any) {
       res.status(400).send(error.message);
     }

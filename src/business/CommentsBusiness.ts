@@ -14,7 +14,7 @@ export class CommentsBusiness {
 
       if (!comment || !postId || !authorId) {
         throw new Error(
-          'Preencha os campos "comment", "postId" e "authorId"'
+          'Fill in the fields "comment", "postId" and "authorId"'
         );
       }
 

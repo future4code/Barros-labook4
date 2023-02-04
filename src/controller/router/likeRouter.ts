@@ -7,5 +7,5 @@ export const likeRouter = express.Router()
 const likeController = new LikeController();
 
 likeRouter.post('/create',likeController.createLike);
-likeRouter.delete('/:id',likeController.deleteLike);
+likeRouter.delete('/',likeController.deleteLike);
 

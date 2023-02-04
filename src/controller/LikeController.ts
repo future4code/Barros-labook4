@@ -8,7 +8,7 @@ export class LikeController {
     try {
       const input: LikeInputControllerDTO = {
         postId: req.body.postId,
-        authorId: req.body.authorId
+        authorId: req.headers.authorization as string
       };
 
       await likeBusiness.createLike(input)
@@ -25,7 +25,7 @@ export class LikeController {
       try {
         const input: LikeInputControllerDTO = {
           postId: req.body.postId,
-          authorId: req.params.id
+          authorId: req.headers.authorization as string
         };
        
         await likeBusiness.deleteLike(input)

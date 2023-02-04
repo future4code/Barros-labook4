@@ -7,5 +7,5 @@ export const friendshipRouter = express.Router()
 const friendshipController = new FriendshipController();
 
 friendshipRouter.post('/create',friendshipController.createFriendship);
-friendshipRouter.delete('/:id',friendshipController.deleteFriendship);
+friendshipRouter.delete('/',friendshipController.deleteFriendship);
 

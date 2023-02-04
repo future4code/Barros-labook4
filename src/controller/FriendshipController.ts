@@ -8,7 +8,7 @@ export class FriendshipController {
     try {
       const input: FriendInputDTO = {
         friendId: req.body.friendId,
-        authorId: req.body.authorId
+        authorId: req.headers.authorization as string
       };
 
       await friendshipBusiness.createFriendship(input)
@@ -25,7 +25,7 @@ export class FriendshipController {
       try {
         const input: DeleteFriendshipInputDTO = {
           friendId: req.body.friendId,
-          authorId: req.params.id
+          authorId: req.headers.authorization as string
         };
 
         await friendshipBusiness.deleteFriendship(input)

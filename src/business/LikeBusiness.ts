@@ -1,7 +1,7 @@
 import { LikeDatabase } from "../data/LikeDatabase";
 import { PostDatabase } from "../data/PostDatabase";
 import { UserDatabase } from "../data/UserDatabase";
-import { LikeInputControllerDTO, LikeInputDataDTO, LikeInputDTO } from "../model/likes";
+import { LikeInputControllerDTO, LikeInputDTO } from "../model/likes";
 
 const likeDatabase = new LikeDatabase();
 const userDatabase = new UserDatabase();

@@ -16,14 +16,14 @@ export class PostBusiness {
 
       if (!photo || !description || !type || !createdAt || !authorId) {
         throw new Error(
-          'Preencha os campos photo, description, type, authorId'
+          'Fill in the fields photo, description, type, authorId'
         );
       }
            
 
       if(type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()){
         throw new Error(
-          'Preencha o campo type com normal ou event'
+          'Fill in the fields type: normal or event'
         );
       }
 
@@ -60,9 +60,7 @@ export class PostBusiness {
       const { id } = input;
 
       if(!id){
-        throw new Error(
-          'Pass the id params'
-        );
+        throw new Error('Pass the id params');
       }
 
       const result:TPost[] = await postDatabase.findPost(id)
@@ -133,7 +131,7 @@ export class PostBusiness {
 
       if(type.toUpperCase() !== "normal".toUpperCase() && type.toUpperCase() !== "event".toUpperCase()){
         throw new Error(
-          'Preencha o campo type com normal ou event'
+          'Fill in the field type: normal or event'
         );
       }      
       const posts: FeedPostDTO[] = [];  

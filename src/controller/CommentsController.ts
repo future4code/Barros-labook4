@@ -8,13 +8,13 @@ export class CommentController {
       const input: InputCommentControllerDTO = {
         comment: req.body.comment,
         postId: req.body.postId,
-        authorId: req.body.authorId
+        authorId: req.headers.authorization as string
       };      
 
       const commentBusiness = new CommentsBusiness()
       await commentBusiness.createComment(input)
 
-      res.status(201).send({ message: "Comment create!" });
+      res.status(201).send({ message: "Comment created!" });
     } catch (error: any) {
       res.status(400).send(error.message);
     }

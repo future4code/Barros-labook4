@@ -12,12 +12,12 @@ export class PostController {
         description:req.body.description, 
         type: req.body.type, 
         createdAt: req.body.createdAt, 
-        authorId: req.body.authorId
+        authorId: req.headers.authorization as string
       };
 
       await postBusiness.createPost(input)
 
-      res.status(201).send({ message: "Post criado!" });
+      res.status(201).send({ message: "Post created!" });
     } catch (error: any) {
       res.status(400).send(error.message);
     }
@@ -40,7 +40,7 @@ export class PostController {
   feedPost = async(req: Request, res: Response) => {
     try {
       const input: PostIdDTO = {
-        id: req.params.id
+        id: req.headers.authorization as string
       };
       
       const posts = await postBusiness.feedPost(input)

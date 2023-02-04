@@ -20,35 +20,37 @@ Content-Type: application/json
 ### Create a new Post
 POST http://localhost:3003/post/create
 Content-Type: application/json
+Authorization: 1675001631299
 
 {
     "photo" : "Foto",
     "description": "foto da viagem",
     "type": "normal",
-    "createdAt": "02/01/2023",
-    "authorId": "1675081679184"
+    "createdAt": "02/01/2023"
 }
 
 ### Create a new Friendship
 POST http://localhost:3003/friendship/create
 Content-Type: application/json
+Authorization: 1675001631299
 
 {
-    "friendId":"1675081679184",
-    "authorId": "1675001631299"
+    "friendId":"1675019596015"
 }
 
 ### Delete Friendship
-DELETE http://localhost:3003/friendship/1675001631299
+DELETE http://localhost:3003/friendship
 Content-Type: application/json
+Authorization: 1675001631299
 
 {
-    "friendId":"1675081679184"
+    "friendId":"1675019596015"
 }
 
-### Return Feeds friends
-GET http://localhost:3003/post/getfeeds/1675001631299
+### Return Feeds freands
+GET http://localhost:3003/post/getfeedsfreands
 Content-Type: application/json
+Authorization: 1675001631299
 
 ### return feed by type 
 GET http://localhost:3003/post/getfeeds
@@ -61,15 +63,16 @@ Content-Type: application/json
 ### Like Post
 POST http://localhost:3003/like/create
 Content-Type: application/json
+Authorization: 1675001631299
 
 {
-    "postId":"1675379034720",
-    "authorId": "1675001631299"
+    "postId":"1675379034720"
 }
 
 ### Delete Like Post
-DELETE  http://localhost:3003/like/1675001631299
+DELETE  http://localhost:3003/like
 Content-Type: application/json
+Authorization: 1675001631299
 
 {
     "postId":"1675379034720"
@@ -78,9 +81,9 @@ Content-Type: application/json
 ### Comment Post
 POST   http://localhost:3003/comments
 Content-Type: application/json
+Authorization: 1675001631299
 
 {
     "comment":"Linda foto",
-    "postId":"1675379034720",
-    "authorId": "1675001631299"
+    "postId":"1675379034720"
 }

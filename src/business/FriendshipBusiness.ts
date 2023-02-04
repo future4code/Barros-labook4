@@ -1,10 +1,7 @@
 import { FriendshipDatabase } from "../data/FriendshipDatabase";
 import { UserDatabase } from "../data/UserDatabase";
 import { FriendInputDTO } from "../model/friends";
-import {
-  DeleteFriendshipInputDTO,
-  FriendshipInputDTO
-} from "../model/Friendship";
+import { DeleteFriendshipInputDTO, FriendshipInputDTO} from "../model/Friendship";
 
 const friendshipDatabase = new FriendshipDatabase();
 const userDatabase = new UserDatabase();
