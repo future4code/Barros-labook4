@@ -4,8 +4,8 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name":"Bianca6 Smith",
-    "email":"bianca6@gmail.com",
+    "name":"Bianca Smith",
+    "email":"bianca9@gmail.com",
     "password": "1234567"
 }
 
@@ -26,7 +26,7 @@ Authorization: 1675001631299
     "photo" : "Foto",
     "description": "foto da viagem",
     "type": "normal",
-    "createdAt": "02/01/2023"
+    "createdAt": "08/02/2023"
 }
 
 ### Create a new Friendship
