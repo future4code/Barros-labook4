@@ -32,6 +32,7 @@ https://labook4.onrender.com
 * axios
 * cors
 * dotenv
+* uuid
 * MySQL
 
 
