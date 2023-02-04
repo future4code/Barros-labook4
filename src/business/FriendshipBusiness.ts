@@ -2,9 +2,11 @@ import { FriendshipDatabase } from "../data/FriendshipDatabase";
 import { UserDatabase } from "../data/UserDatabase";
 import { FriendInputDTO } from "../model/friends";
 import { DeleteFriendshipInputDTO, FriendshipInputDTO} from "../model/Friendship";
+import { IdGenerator } from "../service/IdGenerator";
 
 const friendshipDatabase = new FriendshipDatabase();
 const userDatabase = new UserDatabase();
+const  idGenerator = new IdGenerator();
 
 export class FriendshipBusiness {
   createFriendship = async (input: FriendInputDTO): Promise<void> => {
@@ -32,7 +34,7 @@ export class FriendshipBusiness {
         throw new Error("User id does not exist.");
       }
 
-      const id: string = Date.now().toString();
+      const id: string = idGenerator.generateId();
       
       const queryResult: FriendshipInputDTO[] =
       await friendshipDatabase.findFriendship(authorId);

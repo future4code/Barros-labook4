@@ -1,5 +1,7 @@
 import { UserDatabase } from "../data/UserDatabase";
 import { InputControllerDTO } from "../model/User";
+import { IdGenerator } from "../service/IdGenerator";
+const  idGenerator = new IdGenerator();
 
 export class UserBusiness {
   createUser = async (input: InputControllerDTO): Promise<void> => {
@@ -24,7 +26,7 @@ export class UserBusiness {
       if(existUser != -1) {
         throw new Error("User already registered");
       }
-      const id: string = Date.now().toString();
+      const id: string =  idGenerator.generateId();
 
       
       await userDatabase.insertUser({

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc && node ./build/index.js",
     "dev": "ts-node-dev ./src/index.ts",
-    "migrations": "tsc && node ./build/dataBase/migrations.js"
+    "migrations": "tsc && node ./build/data/migrations.js"
   },
   "author": "Byron",
   "license": "ISC",

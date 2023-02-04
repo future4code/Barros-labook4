@@ -2,10 +2,12 @@ import { LikeDatabase } from "../data/LikeDatabase";
 import { PostDatabase } from "../data/PostDatabase";
 import { UserDatabase } from "../data/UserDatabase";
 import { LikeInputControllerDTO, LikeInputDTO } from "../model/likes";
+import { IdGenerator } from "../service/IdGenerator";
 
 const likeDatabase = new LikeDatabase();
 const userDatabase = new UserDatabase();
 const postDatabase = new PostDatabase();
+const  idGenerator = new IdGenerator();
 
 export class LikeBusiness {
   createLike = async (input: LikeInputControllerDTO): Promise<void> => {
@@ -45,7 +47,7 @@ export class LikeBusiness {
       }
 
 
-      const id: string = Date.now().toString();
+      const id: string = idGenerator.generateId();
             
       await likeDatabase.insertLike({
         id,
