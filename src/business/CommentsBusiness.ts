@@ -2,9 +2,12 @@ import { CommentDatabase } from "../data/CommentsDatabase";
 import { PostDatabase } from "../data/PostDatabase";
 import { UserDatabase } from "../data/UserDatabase";
 import { InputCommentControllerDTO } from "../model/Comments";
+import { IdGenerator } from "../service/IdGenerator";
+
 const commentDatabase = new CommentDatabase();
 const userDatabase = new UserDatabase();
 const postDatabase = new PostDatabase();
+const  idGenerator = new IdGenerator();
 
 export class CommentsBusiness {
   createComment = async (input: InputCommentControllerDTO): Promise<void> => {
@@ -31,7 +34,7 @@ export class CommentsBusiness {
         throw new Error("Post not exist.");
       }
 
-      const id: string = Date.now().toString();
+      const id: string = idGenerator.generateId();
 
       
       await commentDatabase.insertcomment({

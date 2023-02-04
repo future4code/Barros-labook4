@@ -4,10 +4,12 @@ import { UserDatabase } from "../data/UserDatabase";
 import { FriendshipInputDTO } from "../model/Friendship";
 import { FeedPostDBDTO, FeedPostDTO, InpultPostDTO, PostIdDTO, PostTypeDTO, TPost } from "../model/Posts";
 import { dateFormat, dateFormatBr } from "../service/formatDate";
+import { IdGenerator } from "../service/IdGenerator";
 
 const postDatabase = new PostDatabase();
 const userDatabase = new UserDatabase();
 const friendshipDatabase = new FriendshipDatabase();
+const  idGenerator = new IdGenerator();
 
 export class PostBusiness {
   createPost = async (input: InpultPostDTO): Promise<void> => {
@@ -38,7 +40,7 @@ export class PostBusiness {
       
       const formatDate:any= dateFormat(createdAt.toString())
 
-      const id: string = Date.now().toString();
+      const id: string = idGenerator.generateId();
 
       await postDatabase.insertPost({
         id, 
