@@ -50,7 +50,7 @@ Authorization: 1675001631299
 ### Return Feeds freands
 GET http://localhost:3003/post/getfeedsfreands
 Content-Type: application/json
-Authorization: 1675001631299
+Authorization: fde08a25-cb5c-4948-bb59-693eb726721d
 
 ### return feed by type 
 GET http://localhost:3003/post/getfeeds
