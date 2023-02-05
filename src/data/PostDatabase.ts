@@ -37,7 +37,7 @@ export class PostDatabase extends BaseDatabase {
   feedPost = async (input: string[]): Promise<FeedPostDBDTO[]> => {
     try {
       const [result] = await PostDatabase.connection.raw(
-        `select * from ${PostDatabase.TABLE_NAME} where author_id in (${input}) order by created_at desc;`
+        `select * from ${PostDatabase.TABLE_NAME} where author_id in ('${input}') order by created_at desc;`
       );
       return result;
     } catch (error: any) {
