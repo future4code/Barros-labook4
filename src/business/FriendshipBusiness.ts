@@ -46,7 +46,7 @@ export class FriendshipBusiness {
       if (existFriendship != -1) {
         throw new Error("friendship already exists!");
       }
-      const idFriend: string = Date.now().toString();
+      const idFriend: string = idGenerator.generateId();
       
       await friendshipDatabase.insertPost({
         id,
